@@ -1,0 +1,157 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient( 45deg,#b993d6, #8ca6db);
+    color: whitesmoke;
+    min-height: 100vh;
+}
+
+.grille {
+    background-color: rgb(195, 195, 195);
+    display: grid;
+    grid-template: repeat(3, 200px) / repeat(4, 200px);
+    width: 800px;
+    height: 600px;
+    margin: 75px auto 0;
+    // opacity: 0.1;
+}
+
+.carte {
+    background-color: transparent;
+    perspective: 800px;
+    margin: 5px;
+}
+
+
+.double-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.face, .arriere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+   -webkit-backface-visibility: hidden;
+}
+
+.face {
+    background: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.face img {
+    width: 120px;
+}
+
+.arriere {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    // transform: rotateY(80deg);
+}
+
+.active {
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+
+.active90 {
+    transform: rotateY(90deg);
+}
+// img {
+//     display: none;
+// }
+
+
+///////////////////////////////////////   CUBE               ////////////////////////////////
+
+
+
+
+.cube {
+    transform: translateY(180deg);
+    background: #333;
+    margin: 350px auto;
+    width: 350px;
+    height: 350px;
+    background-color: transparent;
+    perspective: 1000px;
+}
+
+
+.double-face {
+    background: #333;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.face2, .left2, .back2, .right2 {
+    background: #333;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+   -webkit-backface-visibility: hidden;
+   font-size: 180px;
+   padding: 25px;
+}
+
+.face2 {
+    background: #333;
+    // transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left2 {
+    transform: rotateY(90deg);
+}
+
+.back2 {
+    transform: rotateY(180deg);
+
+}
+.right2 {
+    transform: rotateY(270deg);
+    background: orangered;
+}
+
+
+
+.newDiv {
+
+    min-height: 100px;
+    width: 50%;
+    min-width: 400px;
+    height: 30vw;
+    border-radius: 15px;
+    margin: 260px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .btnRestart {
+        margin: 25px;
+        padding: 35px;
+        border-radius: 50%;
+    }
+}

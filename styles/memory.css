@@ -1,0 +1,190 @@
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(45deg, #b993d6, #8ca6db);
+  color: whitesmoke;
+  min-height: 100vh;
+}
+
+.grille {
+  background-color: #c3c3c3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (200px)[3];
+  -ms-grid-columns: (200px)[4];
+      grid-template: repeat(3, 200px)/repeat(4, 200px);
+  width: 800px;
+  height: 600px;
+  margin: 75px auto 0;
+}
+
+.carte {
+  background-color: transparent;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  margin: 5px;
+}
+
+.double-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.face, .arriere {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.face {
+  background: #333;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.face img {
+  width: 120px;
+}
+
+.arriere {
+  background-color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 80px;
+}
+
+.active {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+.active90 {
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.cube {
+  -webkit-transform: translateY(180deg);
+          transform: translateY(180deg);
+  background: #333;
+  margin: 350px auto;
+  width: 350px;
+  height: 350px;
+  background-color: transparent;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.double-face {
+  background: #333;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.face2, .left2, .back2, .right2 {
+  background: #333;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  font-size: 180px;
+  padding: 25px;
+}
+
+.face2 {
+  background: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.left2 {
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.back2 {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.right2 {
+  -webkit-transform: rotateY(270deg);
+          transform: rotateY(270deg);
+  background: orangered;
+}
+
+.newDiv {
+  min-height: 100px;
+  width: 50%;
+  min-width: 400px;
+  height: 30vw;
+  border-radius: 15px;
+  margin: 260px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newDiv .btnRestart {
+  margin: 25px;
+  padding: 35px;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=memory.css.map */
