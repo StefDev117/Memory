@@ -1,14 +1,11 @@
-// var alertConfig={
-//   boxBgClass:"blue",//Background class
-//   boxBgColor:"white",
-//   boxBtnCloseClass:"active",//Button close class
-// };
-
-
 
 const cartes = document.querySelectorAll(".carte");
 const grille = document.querySelector(".grille");
 const body = document.querySelector("body");
+
+const txtNbOfClicks = document.querySelector(".nb-of-clicks");
+let nbOfClicks = 0;
+
 
 let carteRetournee = false;
 
@@ -73,11 +70,9 @@ function correspondance(secondeCarteIndex, premiereCarteIndex) {
   ) {
     premiereCarte.removeEventListener("click", retourneCarte);
     secondeCarte.removeEventListener("click", retourneCarte);
-
-
-
     valueCardActive += 2;
     console.log(valueCardActive);
+    nbOfClicks +=2;
     if (valueCardActive === 12) {
       setTimeout(() => {
         completed();
@@ -88,7 +83,10 @@ function correspondance(secondeCarteIndex, premiereCarteIndex) {
     verrouillage = true;
     console.log(verrouillage);
     setTimeout(funcRemoveClass, 1750);
+    nbOfClicks +=2;
   }
+  txtNbOfClicks.textContent = nbOfClicks;
+  console.log(nbOfClicks);
 }
 
 function funcRemoveClass() {
@@ -114,8 +112,6 @@ function aleatoirePosition() {
 
 function completed() {
   grille.remove();
-
-
   const newDiv = document.createElement("div");
   newDiv.classList.add("newDiv");
 
